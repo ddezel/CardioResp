@@ -1,5 +1,5 @@
-Package: VirtualPatient
-Title: Virtual Human Simulator with R
+Package: CardioResp
+Title: Cardio-Respiratory model with R
 Version: 0.0.0.9000
 Authors@R: c(
     person("David", "Granjon", email = "dgranjon@ymail.com", role = c("aut", "cre")),
@@ -15,7 +15,7 @@ BugReports: https://github.com/DivadNojnarg/Cardio_Renal_Models/issues
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.0
 NeedsCompilation: no
 Packaged: 2019-06-25 10:50:49 UTC; isabellerudolf
 Author: David Granjon [aut, cre],

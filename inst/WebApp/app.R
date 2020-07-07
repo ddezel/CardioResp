@@ -59,7 +59,7 @@ Sys.setenv(TZ = "Europe/Zurich")
 #-------------------------------------------------------------------------
 
 # model directory
-coreFolder <- system.file("Ellwein_Gadget/model_core", package = "VirtualPatient")
+coreFolder <- system.file("Ellwein_Gadget/model_core", package = "CardioResp")
 #con <- file(paste0(coreFolder, "/equations.c"), open = "r")
 #con <- file("/Users/isabellerudolf\ 1/Desktop/VirtualPatient/inst/Ellwein_Gadget/model_core/equations.c", open = "r")
 #temp_model <- readLines(con)

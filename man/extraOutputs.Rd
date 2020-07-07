@@ -4,7 +4,9 @@
 \name{extraOutputs}
 \alias{extraOutputs}
 \title{Model outputs}
-\format{An object of class \code{character} of length 52.}
+\format{
+An object of class \code{character} of length 52.
+}
 \usage{
 extraOutputs
 }

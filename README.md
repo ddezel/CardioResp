@@ -1,2 +1,2 @@
-# VirtualPatient
-Virtual Human Web App
+# CardioResp
+CardioResp Web App

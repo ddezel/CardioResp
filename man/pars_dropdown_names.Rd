@@ -4,7 +4,9 @@
 \name{pars_dropdown_names}
 \alias{pars_dropdown_names}
 \title{Model outputs for bottom right box}
-\format{An object of class \code{numeric} of length 6.}
+\format{
+An object of class \code{numeric} of length 6.
+}
 \usage{
 pars_dropdown_names
 }

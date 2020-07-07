@@ -17,6 +17,7 @@ pars_dropdown_names <- c(
   resp2CC_ratio = 0.2 # ratio of the respiratory cycle to cardiac cycle duration: slow breathing: 0.08; //hyperventilation: 0.8; 
 )
 
+
 #' Model outputs
 #'
 #' @export
@@ -44,39 +45,40 @@ extraOutputs <- c(
   "cB_CO2", "cB_O2", "Va", "d_Va", "Rav", "Rmv", "Rpv", "Rtv", "Raa"
 )
 
-
+#' Plot options parameters
+#'
 #' @export
 plot_options_params <- c(
-  "time",               
-  "VolAorta",            
-  "VolSystemicArtery",                
-  "VolSystemicVein",               
-  "VolLeftVentricle", 
+  "time",
+  "VolAorta",
+  "VolSystemicArtery",
+  "VolSystemicVein",
+  "VolLeftVentricle",
   "Vtot",
-  "CardiacOutput",                 
-  "SympNervActivity",        
-  "MeanArterialPressure", 
-  "Qaa", 
-  "Qp", 
+  "CardiacOutput",
+  "SympNervActivity",
+  "MeanArterialPressure",
+  "Qaa",
+  "Qp",
   "Qs",
-  "Qca", 
-  "Qc",  
+  "Qca",
+  "Qc",
   "Qcv",
-  "Ppa", 
-  "Ppv", 
-  "Paorta", 
-  "Psa", 
+  "Ppa",
+  "Ppv",
+  "Paorta",
+  "Psa",
   "Psv",
-  "Pca", 
+  "Pca",
   "Pcv",
-  "Plv", 
-  "Prv", 
+  "Plv",
+  "Prv",
   "HR"
 )
 
 
-# initial values for the gadget
-
+#' initial values for the gadget
+#'
 #'@export
 state_gadget <- c(
   #initial values for cardiovascular model
