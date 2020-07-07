@@ -1,0 +1,24 @@
+Package: VirtualPatient
+Title: Virtual Human Simulator with R
+Version: 0.0.0.9000
+Authors@R: c(
+    person("David", "Granjon", email = "dgranjon@ymail.com", role = c("aut", "cre")),
+    person("Isabelle", "Rudolf", email = "isabelle.rudolf@uzh.ch", role = "aut"),
+    person("Diane", "de Zélicourt", email = "diane.dezelicourt@physiol.uzh.ch", role = "aut"))
+Description: This package contains several cardio renal models: Beard, 2013; Ellwein, 2016;
+    Hallow, 2017 as well a renal module, namely Karaaslan, 2005. It contains a shiny app that consists
+    in building a virtual patient simulator.
+Depends: R (>= 3.4.4)
+Imports: shiny, bs4Dash, shinycssloaders, visNetwork, magrittr
+URL: https://github.com/DivadNojnarg/Cardio_Renal_Models
+BugReports: https://github.com/DivadNojnarg/Cardio_Renal_Models/issues
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+NeedsCompilation: no
+Packaged: 2019-06-25 10:50:49 UTC; isabellerudolf
+Author: David Granjon [aut, cre],
+  Isabelle Rudolf [aut],
+  Diane de Zélicourt [aut]
+Maintainer: David Granjon <dgranjon@ymail.com>
