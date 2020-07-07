@@ -27,6 +27,8 @@ library(FME)
 library(htmltools)
 library(colorspace)
 
+library(CardioResp)
+
 # define color palette for plots
 colors <- c("royalblue1", "red4", "brown2", "gray40", "navy", "indianred1", "black")
 
@@ -697,8 +699,9 @@ server <- function(input, output, session) {
   useShinyjs()
   
   # model file and first compilation
-  dir.create("temp_core")
-  file.copy(file.path(coreFolder, list.files(coreFolder)), "temp_core")
+  # if( dir.exists("temp_core") ) {system("rm -r temp_core")}
+  # dir.create("temp_core")
+  # file.copy(file.path(coreFolder, list.files(coreFolder)), "temp_core")
   system("R CMD SHLIB temp_core/equations.c")
   dyn.load(paste("temp_core/equations", .Platform$dynlib.ext, sep = ""))
   
@@ -707,7 +710,7 @@ server <- function(input, output, session) {
     writeLines(input$ellwein_model, "temp_core/equations.c")
     # model compilation
     system("R CMD SHLIB temp_core/equations.c")
-    dyn.load(paste("temp_core/equations", .Platform$dynlib.ext, sep = "")) 
+    dyn.load(paste("temp_core/equations", .Platform$dynlib.ext, sep = ""))
   })
   
   # model equations
@@ -755,7 +758,7 @@ server <- function(input, output, session) {
     pars_gadget <- pars_gadget()
     #state_gadget <- state_gadget()
     input$confirm_model
-    req(input$tmax, 0.0001)  # input$dt
+    req(input$tmax, 0.0005) #0.0001)  # input$dt
     as.data.frame(
       ode(
         y = unlist(init()),
@@ -863,10 +866,17 @@ server <- function(input, output, session) {
            input$xaxis
          },
          ylab = input$yaxis,
-         ylim = c(min(out_gadget[[input$yaxis]]) * 0.5, max(out_gadget[[input$yaxis]]) * 1.5)
+         ylim = c(min(out_gadget[[input$yaxis]]) * 0.9, max(out_gadget[[input$yaxis]]) * 1.1)
        )
     } else {
       # initialize the plot
+        ymin = min(out_gadget[[input$yaxis[1]]]) * 0.9
+        ymax = max(out_gadget[[input$yaxis[1]]]) * 1.1
+        for (i in 2:length(input$yaxis)) {
+          ymin = min(ymin,min(out_gadget[[input$yaxis[i]]]) * 0.9)
+          ymax = max(ymax,max(out_gadget[[input$yaxis[i]]]) * 1.1)
+        }
+
         plot(
           x = if (input$timescale == "sec" && input$xaxis == "time" ) {
             out_gadget[[input$xaxis]] * 60
@@ -885,23 +895,24 @@ server <- function(input, output, session) {
             input$xaxis
           },
           ylab = input$yaxis,
-          ylim = c(min(out_gadget[[input$yaxis[1]]]) * 0.5, max(out_gadget[[input$yaxis[1]]]) * 1.5),
-           )
-           lapply(2:length(input$yaxis), FUN = function(i) {
-            lines(
-              x = if (input$timescale == "sec" ) {
-                out_gadget[[input$xaxis]] * 60
-              } else {
-                out_gadget[[input$xaxis]]
-              },
-              y = out_gadget[[input$yaxis[i]]],
-              type = "l",
-              col = colors[i],
-              lwd = 4,
-              ylab = input$yaxis[i],
-              ylim = c(min(out_gadget[[input$yaxis[i]]]) * 0.5, max(out_gadget[[input$yaxis[i]]]) * 1.5)
-            )
-          })
+          ylim = c(ymin, ymax)
+        )
+
+        lapply(2:length(input$yaxis), FUN = function(i) {
+          lines(
+            x = if (input$timescale == "sec" ) {
+              out_gadget[[input$xaxis]] * 60
+            } else {
+              out_gadget[[input$xaxis]]
+            },
+            y = out_gadget[[input$yaxis[i]]],
+            type = "l",
+            col = colors[i],
+            lwd = 4,
+            ylab = input$yaxis[i],
+            ylim = c(ymin, ymax)
+          )
+        })
         }
     })
   
