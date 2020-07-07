@@ -1,0 +1,12 @@
+name: cardioresp
+title: CardioResp
+username: ddezel
+account: ddezel
+server: 130.60.228.28
+hostUrl: http://130.60.228.28:3939/__api__
+appId: 17
+bundleId: 59
+url: http://130.60.228.28:3939/content/17/
+when: 1594103552.56312
+asMultiple: FALSE
+asStatic: FALSE

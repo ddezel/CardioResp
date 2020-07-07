@@ -1,6 +1,6 @@
 .onAttach <- function(libname, pkgname) {
   packageStartupMessage(
-    "Welcome to the Virtual Human Package.\n",
+    "Welcome to the Cardio-respiratory eLearning App.\n",
     "Have Fun!"
   )
 }
