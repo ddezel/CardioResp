@@ -2,7 +2,7 @@
 # #'
 # #' @param id, character used to specify namespace, see \code{shiny::\link[shiny]{NS}}
 # #'
-# #' @return a \code{shiny::\link[shiny]{tagList}} containing UI elements
+# #' @return a \code{shiny::\link[shiny]{tag}} containing UI elements
 # #' 
 # #' @export
 # deBugUI <- function(id) {

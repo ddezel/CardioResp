@@ -10,7 +10,7 @@ patientGraphUI(id)
 \item{id, }{character used to specify namespace, see \code{shiny::\link[shiny]{NS}}}
 }
 \value{
-a \code{shiny::\link[shiny]{tagList}} containing UI elements
+a \code{shiny::\link[shiny]{tag}} containing UI elements
 }
 \description{
 Model Playground (Gadget) UI Function

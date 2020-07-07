@@ -12,7 +12,7 @@ teamCardUI(id, width = 4)
 \item{width}{Card width. 4 by default.}
 }
 \value{
-a \code{shiny::\link[shiny]{tagList}} containing UI elements
+a \code{shiny::\link[shiny]{tag}} containing UI elements
 }
 \description{
 Team Card UI module

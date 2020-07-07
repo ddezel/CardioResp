@@ -3,7 +3,7 @@
 #' @param id character used to specify namespace, see \code{shiny::\link[shiny]{NS}}
 #' @param width Card width. 4 by default.
 #'
-#' @return a \code{shiny::\link[shiny]{tagList}} containing UI elements
+#' @return a \code{shiny::\link[shiny]{tag}} containing UI elements
 #' 
 #' @export
 teamCardUI <- function(id, width = 4) {

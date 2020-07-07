@@ -1,8 +1,10 @@
 #' Model Playground (Gadget) UI Function
 #'
 #' @param id, character used to specify namespace, see \code{shiny::\link[shiny]{NS}}
+#' 
+#' @importFrom shiny tagList
 #'
-#' @return a \code{shiny::\link[shiny]{tagList}} containing UI elements
+#' @return a \code{shiny::\link[shiny]{tag}} containing UI elements
 #' 
 #' @export
 
